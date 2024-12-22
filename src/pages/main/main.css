@@ -1,0 +1,188 @@
+﻿.header {
+    display: flex;
+    height: 8vw;
+    background-image: url("../../images/bg_dots.png");
+    background-size: cover;
+    background-color: #ffffff;
+    background-blend-mode: multiply;
+    width: 100vw;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 80%);
+    align-items: center;
+    justify-content: space-around;
+}
+
+.header-title {
+    font-weight: 800;
+    font-size: 2vw;
+    margin-bottom: 1.4vw;
+}
+
+.contact-block {
+    display: flex;
+    width: 21vw;
+    justify-content: space-between;
+    font-weight: 600;
+    font-size: 1.2vw;
+}
+
+.contact-block span {
+    background-color: #F9F6EA;
+    padding: 0.2vw 0.3vw;
+    border-radius: 0.5vw;
+    transition: all 500ms ease;
+    cursor: pointer;
+    color: black;
+}
+
+.contact-block span:hover {
+    background-color: black;
+    color: #F9F6EA;
+    transform: scale(1.1)
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    color: #F9F6EA;
+    margin-left: 5vw;
+    margin-top: 1.5vw;
+}
+
+.main-title {
+    font-weight: 800;
+    font-size: 2vw;
+}
+
+.main-description {
+    font-weight: 600;
+    font-size: 1.2vw;
+    width: 50%;
+    margin-top: 1vw;
+}
+
+.main-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-right: 5vw;
+    margin-top: 5vw;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    background-image: url("../../images/confeti_texture.jpg");
+    background-color: #5562ca;
+    background-blend-mode: soft-light;
+    background-size: cover;
+    color: white;
+    width: 23vw;
+    height: 9vw;
+    align-items: center;
+    justify-content: space-around;
+    padding: 1vw;
+    border-radius: 1vw;
+}
+
+.card-title {
+    font-weight: 700;
+    font-size: 1.4vw;
+    display: flex;
+}
+
+.card-body {
+    font-weight: 500;
+    font-size: 1vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.modal-overlay {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    backdrop-filter: blur(0.75vw);
+    position: absolute;
+    z-index: 2;
+    transition: all 300ms ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.about {
+    display: flex;
+    width: 100%;
+    height: 40vw;
+    background-image: url("../../images/bg_dots.png");
+    background-repeat: no-repeat;
+    background-blend-mode: multiply;
+    background-color: white;
+    margin-top: 5vw;
+    clip-path: polygon(0 10%, 100% 0, 100% 1000%, 0 100%);
+    justify-content: space-between;
+}
+
+.about-card {
+    background-image: url("../../images/dust.jpg");
+    background-size: cover;
+    background-blend-mode: soft-light;
+    background-color: #dadada;
+    width: 24.95%;
+    height: 40vw;
+    border-left: 0.1vw solid rgba(0, 0, 0, 0.49);
+    transition: all 500ms ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.about-card-title {
+    font-size: 2vw;
+    font-weight: 800;
+    margin-bottom: 2vw;
+    margin-top: 5vw;
+}
+
+.about-card-content {
+    font-size: 0;
+    opacity: 0;
+    padding-left: 1vw;
+    padding-right: 1vw;
+}
+
+.about-card:hover {
+    background-color: #716e6e;
+    width: 50%;
+    color: white;
+}
+
+.about-card:hover .about-card-title {
+    font-size: 2.4vw;
+}
+
+.about-card:hover .about-card-content {
+    opacity: 1;
+    font-size: 1.2vw
+}
+
+.footer {
+    background-color: #0e1429;
+    width: 100%;
+    height: 5vw;
+    color: white;
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-row {
+    margin-left: 2vw;
+    margin-top: 0.7vw;
+    font-weight: 800;
+    font-size: 1vw;
+}
