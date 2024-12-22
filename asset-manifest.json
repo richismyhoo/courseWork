@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/courseWork/static/css/main.8c93f255.css",
+    "main.js": "/courseWork/static/js/main.f9948712.js",
+    "static/media/dust.jpg": "/courseWork/static/media/dust.2c477435744b9639be31.jpg",
+    "static/media/bg_dots.png": "/courseWork/static/media/bg_dots.405d1ff8152cfabad157.png",
+    "static/media/confeti_texture.jpg": "/courseWork/static/media/confeti_texture.94e5baba1c0c1ba84bd9.jpg",
+    "index.html": "/courseWork/index.html",
+    "main.8c93f255.css.map": "/courseWork/static/css/main.8c93f255.css.map",
+    "main.f9948712.js.map": "/courseWork/static/js/main.f9948712.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.8c93f255.css",
+    "static/js/main.f9948712.js"
+  ]
+}
