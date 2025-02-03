@@ -1,89 +1,78 @@
-﻿import "./main.css"
-import { InfoCards } from "../../components/InfoCards/InfoCards"
-import { ModalForm } from "../../components/ModalForm/ModalForm"
-import { useState, useRef } from "react"
-import { useNavigate } from "react-router-dom"
+﻿import React from "react";
+import { useNavigate } from "react-router-dom";
+import { NavBar } from "../../components/NavBar/NavBar";
 
 export const Main = () => {
 
-    const navigate = useNavigate()
-
-    const scrollToRef = useRef()
-
-    const [activeModal, setActiveModal] = useState(false)
-
-    const handleModalForm = () => {
-        setActiveModal(true)
-    }
-
-    const callBackCloseModal = () => {
-        setActiveModal(false)
-    }
-
-    const closeModal = (event) => {
-        if (event.target.className === 'modal-overlay') {
-            setActiveModal(false)
-        }
-    }
+    const navigate = useNavigate();
 
     const handleGoToAbout = () => {
-        scrollToRef.current.scrollIntoView({
-            behavior: "smooth",
-        })
-    }
-
-    const openCourses = () => {
-        navigate("/courses")
+        navigate("/about");
     }
 
     return (
-        <>
-            <div className="modal-overlay" onClick={closeModal}
-                 style={activeModal ? {display: "flex", visibility: "visible"} : {
-                     display: "none",
-                     visibility: "hidden"
-                 }}>
-                <ModalForm activeModal={activeModal} closeModal={callBackCloseModal}/>
+        <div id="webcrumbs">
+            <div className="w-[1200px] bg-gray-50">
+                <NavBar/>
+                <main className="mt-8 px-8">
+                    <section className="relative h-[500px] rounded-2xl overflow-hidden mb-16">
+                        <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 opacity-90" />
+                        <div className="relative z-10 flex items-center h-full px-12">
+                            <div className="w-1/2">
+                                <h2 className="text-5xl font-bold text-white mb-6">Стань профессионалом в веб-дизайне</h2>
+                                <p className="text-xl text-white mb-8">Получите востребованную профессию и начните карьеру в digital-индустрии</p>
+                                <button className="bg-white px-8 py-3 rounded-full text-blue-600 font-semibold hover:bg-gray-100 transform hover:scale-105 transition-all">Узнать больше</button>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section className="grid grid-cols-3 gap-8 mb-16">
+                        <div className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
+                            <span className="material-symbols-outlined text-4xl text-blue-600 mb-4"></span>
+                            <h3 className="text-xl font-bold mb-4">Современные технологии</h3>
+                            <p>Изучайте актуальные инструменты и технологии веб-дизайна</p>
+                        </div>
+                        <div className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
+                            <span className="material-symbols-outlined text-4xl text-blue-600 mb-4"></span>
+                            <h3 className="text-xl font-bold mb-4">Опытные преподаватели</h3>
+                            <p>Обучайтесь у практикующих специалистов индустрии</p>
+                        </div>
+                        <div className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
+                            <span className="material-symbols-outlined text-4xl text-blue-600 mb-4"></span>
+                            <h3 className="text-xl font-bold mb-4">Помощь в трудоустройстве</h3>
+                            <p>Получите поддержку в поиске работы после обучения</p>
+                        </div>
+                    </section>
+
+                    <section className="bg-white rounded-xl shadow-lg p-12 mb-16">
+                        <h2 className="text-3xl font-bold mb-8 text-center">Наши программы обучения</h2>
+                        <div className="grid grid-cols-2 gap-8">
+                            <div className="border border-gray-200 rounded-lg p-6 hover:border-blue-600 transition-colors">
+                                <h3 className="text-xl font-bold mb-4">UI/UX Дизайн</h3>
+                                <p className="mb-4">Научитесь создавать удобные и красивые интерфейсы</p>
+                                <button className="text-blue-600 font-semibold hover:text-blue-700">Подробнее →</button>
+                            </div>
+                            <div className="border border-gray-200 rounded-lg p-6 hover:border-blue-600 transition-colors">
+                                <h3 className="text-xl font-bold mb-4">Web-разработка</h3>
+                                <p className="mb-4">Освойте frontend и backend разработку</p>
+                                <button className="text-blue-600 font-semibold hover:text-blue-700">Подробнее →</button>
+                            </div>
+                        </div>
+                    </section>
+                </main>
+
+                <footer className="bg-white py-8 px-8">
+                    <div className="flex justify-between items-center">
+                        <p>© 2024 WebCollegeItDesign. Все права защищены</p>
+                        <div className="flex space-x-4">
+                            <i className="fa-brands fa-facebook text-xl hover:text-blue-600 transition-colors" />
+                            <i className="fa-brands fa-instagram text-xl hover:text-blue-600 transition-colors" />
+                            <i className="fa-brands fa-telegram text-xl hover:text-blue-600 transition-colors" />
+                        </div>
+                    </div>
+                </footer>
             </div>
-            <div className="header">
-                <span className="header-title">WebDes IT College</span>
-                <div className="contact-block">
-                    <span onClick={handleGoToAbout}>О нас</span>
-                    <span onClick={openCourses}>Курсы</span>
-                    <span onClick={handleModalForm}>Оставить заявку</span>
-                </div>
-            </div>
-            <div className="main">
-                <div className="main-title">Добро пожаловать в мир дизайна</div>
-                <div className="main-description">Наш колледж прелагает профессональные курсы по изучению современного
-                    веб-дизайна и подготовки IT-специалистов высокого уровня.
-                </div>
-                <div className="main-content">
-                    <InfoCards/>
-                </div>
-            </div>
-            <div className="about" ref={scrollToRef}>
-                <div className="about-card">
-                    <div className="about-card-title">7 Лет успешного обучения</div>
-                    <div className="about-card-content">Успешно обучаем студентов веб-дизайну уже более 7 лет. Подходим к вопросу максимально ответственно, каждый студент для нас важен.</div>
-                </div>
-                <div className="about-card">
-                    <div className="about-card-title">Более 10 тыс. отзывов</div>
-                    <div className="about-card-content">Наш колледж имеет хорошо выстроенную репутацию, более 10 тысяч положительных отзывов - тому доказательство</div>
-                </div>
-                <div className="about-card">
-                    <div className="about-card-title">3-12 мес. обучения</div>
-                    <div className="about-card-content">За 7 лет обучения, мы выстроили собственную эффективную систему обучения, которая позволяет значительно ускорить процесс обучения</div>
-                </div>
-                <div className="about-card">
-                    <div className="about-card-title">Низкие цены и гарантии</div>
-                    <div className="about-card-content">Наши цены ниже конкурентов на 20%, при обучении вы соберете значительное портфолио, также даем гарантию трудоустройства в течении 2 месяцев после окончания обучения! </div>
-                </div>
-            </div>
-            <div className="footer">
-                <div className="footer-row">WebDes IT College</div>
-                <div className="footer-row">2017-2024 Все права защищены ©</div>
-            </div>
-        </>
+        </div>
     )
 }
+
