@@ -31,7 +31,7 @@ export const NavBar = () => {
     const handleNavigate = (event) => {
         const address = PAGES.find(p => p.name === event.target.innerHTML)
         if (address.isFromAuthorizable && !localStorage.getItem("token")) {
-            navigate("/registration")
+            navigate("/login")
         } else {
             navigate(address.link)
         }

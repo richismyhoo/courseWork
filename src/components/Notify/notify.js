@@ -14,6 +14,7 @@ export const notify = (type, message) => {
         });
     }
     if (type === "error") {
+        console.log("try to notify")
         toast.error(message, {
             position: "top-right",
             autoClose: 3500,

@@ -14,7 +14,7 @@ export const Login = () => {
 
     useEffect(() => {
         if (localStorage.getItem("token")) {
-            navigate("/lc")
+            navigate("/profile")
         }
     }, [])
 
@@ -49,7 +49,7 @@ export const Login = () => {
                         const toast = notify("error",'Неверные данные')
                     } else {
                         localStorage.setItem("token", token.token)
-                        navigate("/lc")
+                        navigate("/profile")
                     }
                 } catch (e) {
                     console.error(e)

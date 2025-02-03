@@ -14,7 +14,7 @@ export const Registration = () => {
 
     useEffect(() => {
         if (localStorage.getItem("token")) {
-            navigate("/lc")
+            navigate("/profile")
         }
     }, [])
 
